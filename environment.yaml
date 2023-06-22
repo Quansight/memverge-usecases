@@ -1,0 +1,19 @@
+name: memverge-examples
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python>=3.9
+  - jupyter
+  - jupyterlab
+  # Scientific Python stack
+  - numpy
+  - scipy
+  - pandas
+  - networkx
+  - scikit-learn
+  - imbalanced-learn
+  # Visualization
+  - matplotlib
+  - seaborn
+  - s3fs
