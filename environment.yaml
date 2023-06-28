@@ -13,7 +13,9 @@ dependencies:
   - networkx
   - scikit-learn
   - imbalanced-learn
+  # i/o
+  - pyarrow
+  - s3fs
   # Visualization
   - matplotlib
   - seaborn
-  - s3fs
