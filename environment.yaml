@@ -12,7 +12,6 @@ dependencies:
   - pandas
   - networkx
   - scikit-learn
-  - imbalanced-learn
   # i/o
   - pyarrow
   - s3fs
