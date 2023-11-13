@@ -7,8 +7,8 @@ execute the notebooks in `Notebooks/`.
 
 ## How-to guides
 
-1. [Setting up and using Memory Machine Cloud with Jupyter Notebooks](MMCloud/memory-machine-cloud.md)
-2. [Setting up and using Memory Machine Cloud with napari](MMCloud/memory-machine-cloud-dask.md)
+1. [Setting up and using Memory Machine Cloud with Jupyter Notebooks](MMCloud/memory_machine_cloud.md)
+2. [Setting up and using Memory Machine Cloud with napari](napari/napari-mmcloud.md)
 
 ## Use cases (notebooks)
 
