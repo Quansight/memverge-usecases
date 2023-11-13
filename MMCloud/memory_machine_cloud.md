@@ -6,10 +6,30 @@ Follow the extensive
 [documentation](https://docs.memverge.com/mmce/2.2/userguide/olh/oxy_ex-1/topics/a_mmce_gettingstarted_22.html)
 on how to install the *Memory Machine Cloud OpCenter* on AWS.
 
+## Security group configuration
+
+Next, you need to update your Security Group settings to allow for inbound
+connection to your MMCloud instance through the browser. This will allow you to
+have access to your Jupyter Notebook server.
+
+1. In your AWS VPC console, select "Security -> Security groups"
+2. Click on the Security Group with a name that includes
+   "mvOpCenterSecurityGroup". For example, this group will have a name similar
+   to "<your-stack-name>-mvOpCenterSecurityGroup-<random-string>".
+3. Click on the "Inbound rules" tab.
+4. Click on the "Edit inbound rules" button.
+5. Click on the "Add rule" button.
+6. Select "Custom TCP" from the "Type" dropdown.
+7. Enter "8888" in the "Port range" field (this port number is typical for
+   Jupyter notebook servers.)
+8. In the "CDIR Block" field, enter "0.0.0.0/0" to allow connection from any IP
+   address (or enter a specific IP address to restrict access to that IP).
+9. Click on the "Save rules" button.
+
 ## Job creation
 
 To use Jupyter Notebook on MMCloud, we need to create a new Job to start
-the Jupyter Server. The `jupyter_server` provides a Docker container with
+the Jupyter Server. The `jupyter_server` image provides a Docker container with
 all the necessary tools installed.
 
 A *Job Script* has to be specified with the following content:
@@ -56,19 +76,22 @@ policy which will help migrate our workload in case we need more resources.
 
 ![Auto migration policy](2_auto_migration.png)
 
-Lastly, update the port configuration in *Advanced/Network* and publish the
-typical port for the Jupyter Notebook webApp `8888:8888`.
+Next, update the port configuration in *Advanced/Network* and publish the
+typical port for the Jupyter Notebook webApp `8888:8888` and to use the
+Security group you set up earlier.
 
 > **ℹ️ Improvements**
 > 
 > We need to manually update the *SecurityGroup* to allow the inbound port.
 > It would be very convenient to adjust the *SecurityGroup* (or create one
 > for a given Job) automatically.
+>
 > Also, in case of Jupyter Notebooks, the default port should be pre-filled.
 
 The Job creation should take a few minutes to provision our instance. Once
-this is done, we will have access to a public IP we can connect to from a
-web browser (using the port 8888 as specified.)
+this is done, we will have access to a public IP (shown in the Job Details
+interface for MMCloud) we can connect to from a web browser (using the port
+8888, as specified.)
 
 > **ℹ️ Improvements**
 > 
