@@ -1,4 +1,4 @@
-# Memory Machine Cloud and Jupyter Notebook
+# Setting up and using Memory Machine Cloud with Jupyter Notebooks
 
 ## Setup *OpCenter*
 
