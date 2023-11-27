@@ -13,3 +13,4 @@ execute the notebooks in `Notebooks/`.
 ## Use cases (notebooks)
 
 1. [NYC Yellow Taxi Tips Prediction](Notebooks/01_NYC_Yellow_Taxi_Tips_Prediction.ipynb)
+2. [Using napari to process a large dataset](Notebooks/02_napari_brain.ipynb)
